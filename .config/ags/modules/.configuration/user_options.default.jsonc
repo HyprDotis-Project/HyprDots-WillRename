@@ -2,7 +2,7 @@
   "muslim": {
     "enabled": true,
     "prayerTimes": {
-      "city": "Matrouh",
+      "city": "Cairo",
       "country": "Egypt"
     },
     "adhanFiles": {
@@ -14,7 +14,13 @@
     }
   },
   "indicators": {
-    "enabled": true
+    "enabled": true,
+    "powermenu": {
+      "buttonsArray": ["lockButton", "logoutButton", "sleepButton", "hibernateButton", "shutdownButton", "rebootButton", "cancelButton"],
+      "sessionRow1": ["lockButton", "logoutButton", "sleepButton"],
+      "sessionRow2": ["hibernateButton", "shutdownButton", "rebootButton"],
+      "sessionRow3": ["cancelButton"]
+    }
   },
   "wallselect": {
     "enabled": true,
@@ -326,26 +332,30 @@
     }
   },
   "weather": {
-    "city": "Matrouh",
+    "city": "Cairo",
     "preferredUnit": "C"
   },
   "workspaces": {
     "shown": 10,
-    "style": "english"
+    "style": "chinese"
   },
   "dock": {
     "enabled": true,
     "hiddenThickness": 7,
     "dockSize": 36,
     "pinnedApps": [
-      "code",
-      "com.mitchellh.ghostty",
-      "com.obsproject.Studio",
+      "zen-browser",
+      "spotube",
+      "github-desktop",
+      "Code",
+      "zeditor",
       "firefox",
-      "jetbrains-webstorm",
-      "nvim",
-      "spotify",
-      "vesktop"
+      "nwg-look",
+      "Obisidian",
+      "steam",
+      "heroic-games-launcher",
+      "org.gnome.Nautilus",
+      "bottles"
     ],
     "layer": "top",
     "monitorExclusivity": true,
@@ -438,8 +448,12 @@
     },
     "pinnedApps": [
       "windsurf",
-      "nautilus",
-      "spotify"
+      "heroic",
+      "io.bassi.Amberol",
+      "nwg-look",
+      "org.gnome.Nautilus",
+      "spotify-launcher",
+      "steam"
     ],
     "elements": {
       "showWindowTitle": true,

@@ -2,13 +2,14 @@ import GLib from 'gi://GLib';
 import * as Utils from 'resource:///com/github/Aylur/ags/utils.js'
 import { writable, clone } from '../.miscutils/store.js';
 import { fileExists } from '../.miscutils/files.js';
+import { parseJSONC } from '../.miscutils/jsonc.js';
 
-const defaultConfigPath = `${GLib.get_current_dir()}/.config/ags/modules/.configuration/user_options.default.json`;
+const defaultConfigPath = `${GLib.get_current_dir()}/.config/ags/modules/.configuration/user_options.default.jsonc`;
 let configOptions = {};
 
 try {
     const defaultConfig = Utils.readFile(defaultConfigPath);
-    configOptions = JSON.parse(defaultConfig);
+    configOptions = parseJSONC(defaultConfig);
 } catch (e) {
     console.error('Error loading user_options.default.json:', e);
 }
@@ -53,7 +54,7 @@ const update = (file) => {
             optionsOkay = true; // Reset the flag at the start of each update
             const userOverrides = Utils.readFile(file);
             const copy_configOptions = clone(configOptions);
-            overrideConfigRecursive(JSON.parse(userOverrides), copy_configOptions);
+            overrideConfigRecursive(parseJSONC(userOverrides), copy_configOptions);
             if (!optionsOkay) {
                 Utils.timeout(2000, () => Utils.execAsync([
                     'notify-send',
@@ -73,9 +74,9 @@ const update = (file) => {
     return false;
 };
 
-update(USER_CONFIG_FOLDER + 'config.json');
+update(USER_CONFIG_FOLDER + 'config.jsonc');
 
-const monitor = Utils.monitorFile(USER_CONFIG_FOLDER + 'config.json', (file, event) => {
+const monitor = Utils.monitorFile(USER_CONFIG_FOLDER + 'config.jsonc', (file, event) => {
     if (event === 1) { // GFileMonitorEvent.CHANGED
         const success = update(file.get_path());
         if (success) {
