@@ -123,17 +123,42 @@ export default (props) => {
                             icon: 'ripples',
                             name: getString('Borders'),
                             desc: getString('Make Everything Bordered'),
-                            initValue: initBorderVal,
+                            initValue: userOptions.asyncGet().etc.widgetCorners,
                             onChange: async (self, newValue) => {
                                 try {
+                                    const colorDir = `${GLib.get_user_state_dir()}/ags/user`;
+                                    const configPath = `${GLib.get_home_dir()}/.ags/config.jsonc`;
+                            
+                                    await Utils.execAsync(`mkdir -p "${colorDir}"`);
                                     const border = newValue == 0 ? "noborder" : "border";
                                     await execAsync([`bash`, `-c`, `mkdir -p ${GLib.get_user_state_dir()}/ags/user && sed -i "5s/.*/${border}/"  ${GLib.get_user_state_dir()}/ags/user/colormode.txt`]);
-                                    await execAsync(['bash', '-c', `${App.configDir}/scripts/color_generation/applycolor.sh &`]);
+
+                                    const configContent = await Utils.readFile(configPath);
+                            
+                                    const updatedConfig = configContent.match(/"widgetCorners"/)
+                                        ? configContent.replace(/("widgetCorners"\s*:\s*)(true|false)/, `$1${newValue}`)
+                                        : configContent.replace(/(\{)/, `$1\n  "widgetCorners": ${newValue},`);
+                            
+                                    const bytes = new TextEncoder().encode(updatedConfig);
+                                    const file = Gio.File.new_for_path(configPath);
+                                    file.replace_contents(
+                                        bytes,
+                                        null,
+                                        false,
+                                        Gio.FileCreateFlags.REPLACE_DESTINATION,
+                                        null
+                                    );
+                            
+                                    await Utils.execAsync(`${App.configDir}/scripts/color_generation/applycolor.sh`);
+                                    App.applyCss();
+                                    await Utils.execAsync([`bash`, `-c`, `mkdir -p ${GLib.get_user_state_dir()}/ags/user && sed -i "2s/.*/${borderState}/"  ${GLib.get_user_state_dir()}/ags/user/colormode.txt`]);
+                            
                                 } catch (error) {
                                     console.error('Error changing border mode:', error);
                                 }
-                            },
+                            },                            
                         }),
+
                         ConfigSpinButton({
                             icon: 'clear_all',
                             name: getString('Choreography delay'),
