@@ -1,5 +1,5 @@
 <div align="center">
-    <h1 style="font-size:50px">⭐️HyprLuna Dotfiles🌙</h1>
+    <h1 style="font-size:50px">⭐️HyprDots Dotfiles🌙</h1>
       <div>
         <a href="https://discord.gg/qnAHD9keWr">
           <img src="https://img.shields.io/badge/Join%20Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Join Discord">
@@ -7,19 +7,19 @@
         <a href="https://archlinux.org/">
           <img src="https://img.shields.io/badge/Arch_Linux-Compatible-89DCEB?style=for-the-badge&logo=arch-linux&logoColor=white&labelColor=1E1E2E" alt="Arch Linux Compatible">
         </a>
-              <a href="https://github.com/Lunaris-Project/HyprLuna/blob/main/LICENSE">
-          <img src="https://img.shields.io/github/license/Lunaris-Project/HyprLuna?style=for-the-badge&logo=gnu&color=FAB387&labelColor=1E1E2E" alt="License">
+              <a href="https://github.com/HyprDotis-Project/HyprDots/blob/main/LICENSE">
+          <img src="https://img.shields.io/github/license/HyprDotis-Project/HyprDots?style=for-the-badge&logo=gnu&color=FAB387&labelColor=1E1E2E" alt="License">
         </a>
       </div>
       <div>
-              <a href="https://github.com/Lunaris-Project/HyprLuna">
-          <img src="https://img.shields.io/github/repo-size/Lunaris-Project/HyprLuna?style=for-the-badge&logo=github&color=F9E2AF&labelColor=1E1E2E&label=Size" alt="Repo Size">
+              <a href="https://github.com/HyprDotis-Project/HyprDots">
+          <img src="https://img.shields.io/github/repo-size/HyprDotis-Project/HyprDots?style=for-the-badge&logo=github&color=F9E2AF&labelColor=1E1E2E&label=Size" alt="Repo Size">
                   </a>
-        <a href="https://github.com/Lunaris-Project/HyprLuna/commits/main">
-          <img src="https://img.shields.io/github/last-commit/Lunaris-Project/HyprLuna?style=for-the-badge&logo=git&color=F38BA8&labelColor=1E1E2E" alt="Last Commit">
+        <a href="https://github.com/HyprDotis-Project/HyprDots/commits/main">
+          <img src="https://img.shields.io/github/last-commit/HyprDotis-Project/HyprDots?style=for-the-badge&logo=git&color=F38BA8&labelColor=1E1E2E" alt="Last Commit">
         </a>
-        <a href="https://github.com/Lunaris-Project/HyprLuna/stargazers">
-          <img src="https://img.shields.io/github/stars/Lunaris-Project/HyprLuna?color=CBA6F7&labelColor=1E1E2E&style=for-the-badge&logo=starship&logoColor=CBA6F7" alt="Stars">
+        <a href="https://github.com/HyprDotis-Project/HyprDots/stargazers">
+          <img src="https://img.shields.io/github/stars/HyprDotis-Project/HyprDots?color=CBA6F7&labelColor=1E1E2E&style=for-the-badge&logo=starship&logoColor=CBA6F7" alt="Stars">
         </a>
       </div>
 <p align="center">
@@ -96,19 +96,19 @@ cd
 ## Create backup: !!Not needed if you are in fresh installation!!
 
 ```bash
-mkdir -p ~/HyprLuna-User-Bak
-cp -r ~/.config ~/HyprLuna-User-Bak/
-cp -r ~/.local ~/HyprLuna-User-Bak/
-cp -r ~/.fonts ~/HyprLuna-User-Bak/ 2>/dev/null || echo "No .fonts directory to backup"
-cp -r ~/.ags ~/HyprLuna-User-Bak/ 2>/dev/null || echo "No .ags directory to backup"
-cp -r ~/Pictures ~/HyprLuna-User-Bak/
+mkdir -p ~/HyprDots-User-Bak
+cp -r ~/.config ~/HyprDots-User-Bak/
+cp -r ~/.local ~/HyprDots-User-Bak/
+cp -r ~/.fonts ~/HyprDots-User-Bak/ 2>/dev/null || echo "No .fonts directory to backup"
+cp -r ~/.ags ~/HyprDots-User-Bak/ 2>/dev/null || echo "No .ags directory to backup"
+cp -r ~/Pictures ~/HyprDots-User-Bak/
 ```
 
-## Then clone HyprLuna repo:
+## Then clone HyprDots repo:
 
 ```bash
-git clone https://github.com/Lunaris-Project/HyprLuna.git ~/HyprLuna
-cd ~/HyprLuna
+git clone https://github.com/HyprDotis-Project/HyprDots.git ~/HyprDots
+cd ~/HyprDots
 cp -r .config ~/
 cp -r .local ~/
 cp -r .cursor ~/
@@ -128,13 +128,13 @@ sh ~/.config/ags/scripts/color_generation/wallpapers.sh -r
 <div align="center" style="background-color: #11111b; border-radius: 8px; padding: 15px;">
 
 ## 📝 License & Copyright
-<img src="https://img.shields.io/github/license/Lunaris-Project/HyprLuna?style=for-the-badge&logo=gnu&color=FAB387&labelColor=1E1E2E" alt="License Badge"/>
-<p>Copyright © 2025 <a href="https://github.com/Lunaris-Project">Lunaris Project</a></p>
-<p>This project is licensed under the <a href="https://github.com/Lunaris-Project/HyprLuna/blob/main/LICENSE">MIT License</a>.</p>
+<img src="https://img.shields.io/github/license/HyprDotis-Project/HyprDots?style=for-the-badge&logo=gnu&color=FAB387&labelColor=1E1E2E" alt="License Badge"/>
+<p>Copyright © 2025 <a href="https://github.com/HyprDotis-Project">HyprDotis Project</a></p>
+<p>This project is licensed under the <a href="https://github.com/HyprDotis-Project/HyprDots/blob/main/LICENSE">MIT License</a>.</p>
 <hr style="border: 2px solid #CBA6F7;">
 <p>
 <img src="https://img.shields.io/badge/Made%20with-%E2%9D%A4%EF%B8%8F-F38BA8?style=for-the-badge&labelColor=1E1E2E" alt="Made with Love"/>
-<img src="https://img.shields.io/badge/Powered%20by-Lunaris--Team-89DCEB?style=for-the-badge&labelColor=1E1E2E" alt="Powered by Lunaris-Project Team"/>
+<img src="https://img.shields.io/badge/Powered%20by-HyprDotis--Project-89DCEB?style=for-the-badge&labelColor=1E1E2E" alt="Powered by HyprDotis-Project"/>
 </p>
 <p><i>🌙 Stars light up the night sky, but the moon illuminates the path 🌙</i></p>
 </div>
