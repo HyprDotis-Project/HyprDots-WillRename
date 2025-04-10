@@ -119,7 +119,7 @@ export const initGowall = Utils.exec(`bash -c "sed -n \'4p\' ${LIGHTDARK_FILE_LO
 export const initGowallIndex = calculateSchemeInitIndex(gowallArr, initGowall);
 
 export const initBorder = Utils.exec(`bash -c "sed -n \'5p\' ${LIGHTDARK_FILE_LOCATION}"`);
-export const initBorderVal = (initBorder == "border" && userOptions.asyncGet().etc.widgetCorners === true) ? 1 : 0;
+export const initBorderVal = (initBorder == "border") ? 1 : 0;
 
 export const initVibrancy = Utils.exec(`bash -c "sed -n \'6p\' ${LIGHTDARK_FILE_LOCATION}"`);
 export const initVibrancyVal = (initVibrancy == "vibrant") ? 1 : 0;
