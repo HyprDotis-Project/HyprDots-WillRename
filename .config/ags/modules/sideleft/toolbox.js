@@ -3,6 +3,7 @@ const { Box, Label, Scrollable } = Widget;
 import QuickScripts from './tools/quickscripts.js';
 import ColorPicker from './tools/colorpicker.js';
 import Configure from './../sideleft/tools/configure.js';
+import Conversions from './tools/conversions.js';
 export default Scrollable({
     hscroll: "never",
     vscroll: "automatic",
@@ -12,6 +13,7 @@ export default Scrollable({
         children: [
             Configure(),
             ColorPicker(),
+            Conversions(),
             QuickScripts(),
         ]
     })
