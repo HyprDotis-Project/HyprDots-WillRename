@@ -14,7 +14,13 @@
     }
   },
   "indicators": {
-    "enabled": true
+    "enabled": true,
+    "powermenu": {
+      "buttonsArray": ["lockButton", "logoutButton", "sleepButton", "hibernateButton", "shutdownButton", "rebootButton", "cancelButton"],
+      "sessionRow1": ["lockButton", "logoutButton", "sleepButton"],
+      "sessionRow2": ["hibernateButton", "shutdownButton", "rebootButton"],
+      "sessionRow3": ["cancelButton"]
+    }
   },
   "wallselect": {
     "enabled": true,

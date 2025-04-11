@@ -9,6 +9,15 @@ $rounding_mediumlarge: 1.364rem;
 $rounding_large: 1.705rem;
 
 // Common rules
+@mixin unsharpen-rounding {
+    border-radius: $rounding_unsharpen;
+}
+
+@mixin verysmall-rounding {
+    border-radius: $rounding_verysmall;
+    -gtk-outline-radius: $rounding_verysmall;
+}
+
 @mixin small-rounding {
     border-radius: $rounding_small;
     -gtk-outline-radius: $rounding_small;
